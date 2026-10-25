@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLOR Y GERO</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelementplayer.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+    <!-- Estilos de los dos lugares (si querés, pasalos a style.css) -->
+    <style>
+        .lugares {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            align-items: center;
+            text-align: center;
+        }
+        .lugar .lugar-titulo {
+            font-size: 1.4em;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+        .lugar .lugar-hora {
+            font-size: 1.2em;
+            margin: 4px 0 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <!-- Canción: La bienvenida - Chano (subir el mp3 con este nombre) -->
+    <div class="audiodiv">
+        <audio id="myAudio" preload="auto">
+            <source src="./chano.mp3" type="audio/mpeg">
+        </audio>
+        <div id="playPauseBtn" class="play">
+            <img src="./img/notamusical.png" alt="Icono de música">
+        </div>
+    </div>
+
+    <!-- Cuenta regresiva: en countdwon.js poner 27/02/2027 18:00 -->
+    <p data-aos="fade-up" class="titulocontador">Faltan:</p>
+    <div class="contador">
+        <div class="bloque">
+            <div data-aos="fade-up" id="dias" class="numero"></div>
+            <div data-aos="fade-up" class="etiqueta">Días</div>
+        </div>
+        <div class="bloque">
+            <div data-aos="fade-up" id="horas" class="numero"></div>
+            <div data-aos="fade-up" class="etiqueta">horas</div>
+        </div>
+        <div class="bloque">
+            <div data-aos="fade-up" id="minutos" class="numero"></div>
+            <div data-aos="fade-up" class="etiqueta">minutos</div>
+        </div>
+        <div class="bloque">
+            <div data-aos="fade-up" id="segundos" class="numero"></div>
+            <div data-aos="fade-up" class="etiqueta">segundos</div>
+        </div>
+    </div>
+
+    <div class="datos-ubicacion">
+        <div>
+            <img data-aos="fade-down" src="./img-editable/relicario.png" alt="">
+        </div>
+        <div class="datos">
+           
+            <div class="lugares">
+                <div class="lugar">
+                    <h3 data-aos="fade-up" class="lugar-titulo">Ceremonia</h3>
+                    <p data-aos="fade-up">18 Hs - IGLESIA JESÚS DE LA DIVINA MISERICORDIA <br> (Barrio Unimev)</p>
+                    
+                    <!-- Reemplazar por el link exacto de Google Maps de la iglesia -->
+                    <a data-aos="fade-up" class="boton" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Iglesia+Jes%C3%BAs+de+la+Divina+Misericordia+Barrio+Unimev">CÓMO LLEGAR</a>
+                </div>
+                <div class="lugar">
+                     <h3 data-aos="fade-up" class="lugar-titulo">Fiesta</h3>
+                    <p data-aos="fade-up">19 Hs - La Casona de Boho</p>
+                    <!-- Reemplazar por el link exacto de Google Maps de la casona -->
+                    <a data-aos="fade-up" class="boton" target="_blank" href="https://www.google.com/maps/search/?api=1&query=La+Casona+de+Boho">CÓMO LLEGAR</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="novios">
+        <img src="./img-editable/fotos1.png" alt="">
+        <div class="icono2">
+            <img data-aos="fade-down" src="./img-editable/icono2.png" alt="">
+        </div>
+        <div class="icono3">
+            <img data-aos="fade-up" src="./img-editable/icono3.png" alt="">
+        </div>
+    </div>
+
+    <div class="timeline">
+        <p class="timeline-title">El gran día...</p>
+        <div class="iconos">
+            <div class="iconos-block">
+                <img data-aos="fade-up" src="./img-editable/tulugar.png" alt="icono">
+                <!-- PENDIENTE: horario de llegada -->
+                <p data-aos="fade-up">XX:XX Hs</p>
+                <P data-aos="fade-up" class="timing-text">Llegada</P>
+            </div>
+            <div class="iconos-block">
+                <img data-aos="fade-up" src="./img-editable/anillos.png" alt="icono">
+                <p data-aos="fade-up">18:00 Hs</p>
+                <P data-aos="fade-up" class="timing-text">Ceremonia</P>
+            </div>
+            <div class="iconos-block">
+                <!-- Civil: reemplazar copas.png si tenés un ícono para el civil -->
+                <img data-aos="fade-up" src="./img-editable/copas.png" alt="icono">
+                <p data-aos="fade-up">19:00 Hs</p>
+                <P data-aos="fade-up" class="timing-text">Civil</P>
+            </div>
+            <div class="iconos-block">
+                <img data-aos="fade-up" src="./img-editable/vueltaacasa.png" alt="icono">
+                <!-- PENDIENTE: horario de vuelta a casa -->
+                <p data-aos="fade-up">XX:XX Hs</p>
+                <P data-aos="fade-up" class="timing-text">Vuelta a casa</P>
+            </div>
+        </div>
+    </div>
+
+    <div id="section2" class="accordion">
+        <h3 data-aos="fade-up">Antes de que nos consultes...</h3>
+
+        <div data-aos="fade-up" class="accordion-item">
+            <button class="accordion-header">¿CÓMO ME VISTO?</button>
+            <div class="accordion-content">
+                <p>QUEREMOS QUE TE SIENTAS CÓMODO/A Y CANCHERO/A, PERO TAMBIÉN QUE SE NOTE QUE ES UN DÍA ESPECIAL.
+                    📸 LAS FOTOS VAN A QUEDAR PARA SIEMPRE, ASÍ QUE: ELEGANTE Y CON ONDA, PERO SIN ESTRÉS.
+                    NO OLVIDES QUE EL BLANCO ES DE LA NOVIA.
+                </p>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" class="accordion-item">
+            <button class="accordion-header">¿QUÉ LES REGALO?</button>
+            <div class="accordion-content">
+                <p>NUESTRO MEJOR REGALO ES QUE ESTÉS CON NOSOTROS EN NUESTRO GRAN DÍA 💕
+                    PERO SI QUERÉS HACERNOS UN OBSEQUIO, ACÁ TE DEJAMOS LOS DATOS DE NUESTRA CUENTA.
+                    HACÉ CLIC PARA COPIARLOS.
+                </p>
+                <div class="gift-block">
+                    <div class="gift-box">
+                        <div class="boton2" data-copy="bodaflorygero">ALIAS: bodaflorygero</div>
+                    </div>
+                    <br>
+                    <div class="gift-box">
+                        <div class="boton2" data-copy="0000003100013120767904">CVU: 0000003100013120767904</div>
+                    </div>
+                    <br>
+                    <p>TITULAR DE LA CUENTA: Geronimo Exequiel Magnenat <br> MERCADO PAGO</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" class="accordion-item">
+            <button class="accordion-header">¿PUEDO LLEVAR A LOS PEQUES?</button>
+            <div class="accordion-content">
+                <p>AMAMOS A LOS NIÑOS… ¡PERO ESTA VEZ PLANEAMOS UNA CELEBRACIÓN PENSADA PARA ADULTOS!
+                    QUEREMOS QUE TODOS PUEDAN RELAJARSE, BRINDAR Y BAILAR SIN INTERRUPCIONES.
+                    GRACIAS POR ENTENDER 💖
+                </p>
+            </div>
+        </div>
+
+        <div class="icono4">
+            <img data-aos="fade-down" src="./img-editable/icono4.png" alt="">
+        </div>
+        <div class="icono5">
+            <img data-aos="fade-up" src="./img-editable/icono5.png" alt="">
+        </div>
+    </div>
+
+    <div class="forms">
+
+        <!-- PONER ACÁ la URL del Apps Script de la planilla de Flor & Gero -->
+        <form name="asistenciaform" method="POST" action="https://script.google.com/macros/s/AKfycbx5kv5ROsCmvZ8L17_oWLUcMGvQBurSb_VXKNUaitHDgTTOtbc0neVMo8jWrxp2KpVcfg/exec" class="formulario" id="asistenciaForm">
+
+            <label class="formtitle">Sólo faltás vos, Venís?</label>
+
+            <select name="ASISTENCIA" required>
+                <option value="" disabled selected>¿Asistís?</option>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+            </select>
+
+            <input type="text" name="NOMBRE" placeholder="Nombre" required />
+            <input type="text" name="APELLIDO" placeholder="Apellido" required />
+
+            <select name="DIETA" required>
+                <option value="" disabled selected>¿Alguna restricción alimentaria?</option>
+                <option value="Sin restricciones">Sin restricciones</option>
+                <option value="Vegetariano">Vegetariano</option>
+                <option value="Celíaco">Celíaco</option>
+            </select>
+
+            <textarea name="CANCION" placeholder="Recomendale una canción al DJ 🎶"></textarea>
+            <textarea name="MENSAJE" placeholder="Dejale un mensaje a los novios 🤍"></textarea>
+
+            <button type="submit" class="boton">ENVIAR</button>
+        </form>
+
+        <p data-aos="fade-up">RECORDÁ COMPLETAR UN FORMULARIO POR PERSONA. <br> HACELO ANTES DEL MIÉRCOLES 27 DE ENERO.</p>
+    </div>
+
+    <div class="novios">
+        <img src="./img-editable/fotos2.png" alt="">
+        <div class="icono6">
+            <img data-aos="fade-up" src="./img-editable/icono6.png" alt="">
+        </div>
+    </div>
+
+    <div class="end">
+        <img data-aos="fade-up" src="./img-editable/manosanillos.png" alt="">
+        <h2 data-aos="fade-up">Flor &amp; Gero</h2>
+        <p data-aos="fade-down">Te esperamos</p>
+    </div>
+
+    <footer>
+        <div class="contenido">
+            <div>
+                <img src="./img/logosiquiero.png" alt="icono si quiero">
+                <p>Hecho con &hearts; <br>
+                &#169; <b>Si,quiero!</b> - invitaciones inteligentes.
+                <br> Todos los derechos reservados.</p>
+            </div>
+            <div class="contenido-list">
+                <ul>
+                    <li><a target="_blank" href="https://www.instagram.com/siquiero.arg/"><i class="bi bi-instagram"></i></a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/Invitaciones-web-112187784608681"><i class="bi bi-facebook"></i></a></li>
+                    <li><a target="_blank" href="mailto:siquiero.invitaciones@gmail.com"><i class="bi bi-envelope"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./countdwon.js"></script>
+    <script src="./reproductor.js"></script>
+    <script src="./form.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init();
+
+            // Reproduce el audio apenas la persona hace el primer scroll
+            var audio = document.getElementById('myAudio');
+            function playOnScroll() {
+                audio.play().catch(function (e) {
+                    console.warn('El navegador bloqueó la reproducción automática', e);
+                });
+                document.removeEventListener('scroll', playOnScroll);
+            }
+            document.addEventListener('scroll', playOnScroll);
+
+            // Acordeón de preguntas frecuentes (uno abierto a la vez)
+            var headers = document.querySelectorAll('.accordion-header');
+            headers.forEach(function (header) {
+                header.addEventListener('click', function () {
+                    var item = header.parentElement;
+                    var yaEstabaActivo = item.classList.contains('active');
+                    headers.forEach(function (otroHeader) {
+                        otroHeader.parentElement.classList.remove('active');
+                    });
+                    if (!yaEstabaActivo) item.classList.add('active');
+                });
+            });
+
+            // Copiar datos de la cuenta al portapapeles
+            document.querySelectorAll('[data-copy]').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    copiarAlPortapapeles(el.getAttribute('data-copy'));
+                });
+            });
+        });
+
+        function copiarAlPortapapeles(texto) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(texto)
+                    .then(function () { alert('Copiaste los datos de la cuenta a tu portapapeles'); })
+                    .catch(function () { copiarAlPortapapeleFallback(texto); });
+            } else {
+                copiarAlPortapapeleFallback(texto);
+            }
+        }
+
+        function copiarAlPortapapeleFallback(texto) {
+            var tempInput = document.createElement('input');
+            document.body.appendChild(tempInput);
+            tempInput.value = texto;
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('Copiaste los datos de la cuenta a tu portapapeles');
+        }
+    </script>
+
+</body>
+</html>
